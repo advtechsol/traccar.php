@@ -1,2 +1,7 @@
 # traccar.php
-LGT-92 php web integration to traccar
+PHP scripts to send data to traccar server.  
+
+# CURRENTLY SUPPORTED DEVICES
+
+LGT-92 Dragino LoraWan Tracker
+RockBLOCK iridium devices using HTTP-JSON
