@@ -30,7 +30,7 @@ echo "Course: ".$course.'<br>';
 echo "Battery: ".$bat.'<br>';
 */
 
-$page = file_get_contents("http://iotnetwork.com.au:5055/?id=$id&lat=$lat&lon=$lng&course=$course&battery=$bat");
+$page = file_get_contents("http://<serveraddress>:5055/?id=$id&lat=$lat&lon=$lng&course=$course&battery=$bat");
 
 
 ?>
