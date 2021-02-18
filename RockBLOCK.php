@@ -1,5 +1,7 @@
 <?php
 
+header("Content-Type: text/plain");
+
 $json = file_get_contents('php://input');
 
 $data = json_decode($json, true);
@@ -18,19 +20,24 @@ $time = $items[0];
 $lat = $items[1];
 $lng = $items[2];
 $alt = $items[3];
-$course = $items[5];
-$bat = $items[7];
+//$course = $items[5];
+$bat = $items[5];
 
-/*
-echo "Time: ".$time.'<br>';
-echo "Latitude: ".$lat.'<br>';
-echo "Longitude: ".$lng.'<br>';
-echo "Altitude: ".$alt.'<br>';
-echo "Course: ".$course.'<br>';
-echo "Battery: ".$bat.'<br>';
-*/
+// $res = [
 
-$page = file_get_contents("http://<serveraddress>:5055/?id=$id&lat=$lat&lon=$lng&course=$course&battery=$bat");
+// "time" => $items[0],
+// "lat" => $items[1],
+// "lng" => $items[2],
+// "alt" => $items[3],
+// "course" => $items[5],
+// "bat" => $items[7]
+// ];
 
+// echo json_encode(["status" => "ok","data" => $res]);
+// die();
+
+echo "OK";
+fastcgi_finish_request();
+$page = file_get_contents("http://iotnetwork.com.au:5055/?id=$id&lat=$lat&lon=$lng&course=$course&battery=$bat");
 
 ?>
